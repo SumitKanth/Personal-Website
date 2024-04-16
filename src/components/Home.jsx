@@ -4,8 +4,8 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import home_bg from "../assets/home_bg.jpg";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { white } from "../constants/color";
-import { Navigate, useNavigate } from "react-router-dom";
-import Footer from "./Footer";
+import {  useNavigate } from "react-router-dom";
+import SumitResume from '../assets/sumit_resume.pdf'
 
 const Home = () => {
     const navigate = useNavigate();
@@ -18,6 +18,15 @@ const Home = () => {
 
   const navigateToAbout = () => {
     navigate('/about')
+  }
+
+  const downloadResume = (url) => {
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", "Sumit Resume");
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
   }
   return (
     <>
@@ -53,7 +62,9 @@ const Home = () => {
           </Typography>
 
           <Stack direction={"row"} padding={"4rem 0"} spacing={"2rem"}>
-            <Button variant="outlined" size="large" color="warning">
+            <Button variant="outlined" size="large" color="warning"
+            onClick={() => downloadResume(SumitResume)}
+            >
               My Resume
             </Button>
             <Button
