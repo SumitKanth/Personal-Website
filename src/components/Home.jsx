@@ -10,7 +10,7 @@ import SumitResume from '../assets/sumit_resume.pdf'
 const Home = () => {
     const navigate = useNavigate();
   const [text] = useTypewriter({
-    words: ["MERN Developer", "Problem Solver", "Gain Hai App"],
+    words: ["MERN Developer", "Problem Solver", "Memer"],
     loop: {},
     typeSpeed: 120,
     deleteSpeed: 80,
